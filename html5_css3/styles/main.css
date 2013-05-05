@@ -1,0 +1,26 @@
+@import url('layout.css');
+/*Main-------------------------------------------------------------------------------------------------------------*/
+	#mainPage  {}
+   	#mainPage section{ background:url("../images/car_icon.png") no-repeat center;
+	   			 margin:0 auto; 
+   				height: 720px; }		
+   	#mainPage p{text-indent: -9999px;}
+	
+/*Career-------------------------------------------------------------------------------------------------------------*/
+ 	#container dd {text-align:right; padding-bottom:40px; color:#E16F43; }
+	#contents {position:relative; height:620px; 
+						background:#E9DDD5; border:.1em solid #5A5658; border-radius:10px; 
+						box-shadow: 6px 5px 10px #966; behavior:url(PIE.htc); }
+ 	#contents h2 {position:absolute; top:45px; left:60px; padding:8px; color:#48473F; 
+				  font:lighter 20px Chunk,Helvetica,sans-serif; background:#CF9448; border-radius:10px; behavior:url(PIE.htc);  }
+ 	#contents figure {position:absolute; top:110px; width:922px; padding:1px;
+ 					line-height:2em; color:#5A5658;}			
+	#contents th {padding-right:6px; text-align:left;font-size:13px; border-right:1px solid #684434;}	
+	#contents td {padding-left: 6px; font-size:1.25em;}			
+    	#contents .computer ul {position:absolute; top:150px; left:80px;}
+	#contents .computer ul li {font-size:1.2em; line-height:2em; color:#5A5658; list-style:disc;}
+	#contents .php h3 {position:absolute; top:125px; left:245px; padding:10px; text-decoration:underline;}
+	#contents .php dl {position:absolute; top:230px; left:640px;}
+	#contents .php dl dt {padding:30px 0; color: #684434; font-size:1.3em;}
+	#contents .php dl dd {text-align:left; font-size:1em; color:#48473F; line-height:3px; } 
+	#contents .php figure img  {position:absolute; top:80px; left:90px; width:350px; height:350px;  border:1px solid #666;}

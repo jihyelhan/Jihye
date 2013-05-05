@@ -1,0 +1,59 @@
+@import url('base.css');
+    	
+    	#wrapper {width:auto; margin:0; height:auto;}
+  @font-face{font-family:Chunk; src:url('../font/Chunk.otf');}	
+/*header-------------------------------------------------------------------------------------------------------------*/
+	header {position:relative;  height:165px;  background:#B43731;  }
+	header p{padding:5px; font-size:9px;}
+	header h1 {background:url("../images/logo.png") no-repeat scroll 0 0 transparent;
+    				display: block; width: 300px; height: 147px; margin-left:20px;
+    				position: absolute; text-indent: -9999px;
+    				top: 55px; }
+    	header h1 a { cursor:pointer; display:block; height:147px;  }			
+	
+	#mainMenu {float:right;  position:relative; 
+				margin-right:40px; border:2px solid #966; background:#E9DDD5;
+									-moz-border-radius: 1em;
+    									-webkit-border-radius: 1em;
+									border-radius:1em; behavior:url(PIE.htc); }
+	#mainMenu li {	float:left; display:inline; text-align:center; vertical-align:middle; padding:4px 35px; 
+					font:lighter 15px Chunk,Helvetica,sans-serif; 
+					border-right:2px solid #966;}
+	#mainMenu .none {border-right:none;}
+	#mainMenu li ul {position:absolute; top:38px; left:275px;  }
+	#mainMenu li li {display:block; padding:6px; text-align:left; font-size:13px;border:none;}
+	#mainMenu li li a {color:#E9DDD5;}
+	#mainMenu li li a:hover {color:#D89791; text-decoration:underline;}
+/*container----------------------------------------------------------------------------------------------------------*/
+	#container { width:980px; margin:0 auto; padding:50px 0px;  }
+	#container .intro h2 {padding-left:210px; 
+					font:lighter 40px Chunk,Helvetica,sans-serif; 
+					color:#E29A46;	
+					}
+	#container .intro h3 {padding:40px 0 30px 0; text-align:center; font-size:19px; color:#E16F43;}
+	#container .intro p  {text-align:center; padding-bottom:63px; font-size:16px;  color:#684434; }
+	#container .profile {position:relative; height:500px; 
+						background:#E9DDD5; border:1px solid #996666; 
+						-moz-border-radius: 1em;
+    						-webkit-border-radius: 1em; border-radius:1em; 
+						box-shadow: 6px 5px 10px #966; background-image:url(../images/painting.jpg); behavior:url(PIE.htc);  }
+	#container .profile figure img {float:left; padding:100px 20px 0 10px; }
+	#container .profile h4 {position:absolute; top:35px; left:800px; padding:10px; color:#48473F; 
+						font:lighter 22px Chunk,Helvetica,sans-serif; border-radius:10px; background:#CF9448; behavior:url(PIE.htc); 
+						}								
+	#container .profile p {position:absolute; top:110px; left:350px; width:550px; padding:20px; 
+											font-size:17px; background:#E9DDD5; color:#1F0C05;
+											} 				
+	#container .profile .second {position:absolute; top:380px; left:660px; padding:15px; 
+								border-radius:1em; behavior:url(PIE.htc);
+								font:lighter 20px Chunk,Helvetica,sans-serif; color:#B7B8B6; background:#5A5658;
+								}
+	#container .profile p a {color:#684334;} 
+/*footer------------------------------------------------------------------------------------------------------------*/
+	footer {clear:both; padding:7px; background:#1F0C05;}	
+	footer p.foot { text-align:right;  padding:17px; font-size:13px;  }
+	footer p img { float:right; width:30px; height:30px; margin:13px; }
+	
+	
+
+

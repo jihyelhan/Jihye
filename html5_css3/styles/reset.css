@@ -1,0 +1,17 @@
+@charset "utf-8";
+body, div, p, 
+h1, h2, h3, h4, h5, h6,
+ul, ol, li, dl, dt, dd,
+table, tr, th, td, caption,
+form, fieldset, input, select, textarea,
+blockquote, address {margin:0; padding:0;}
+h1, h2, h3, h4, h5, h6 {font-size:100%;}
+ul, ol, li {list-style:none;}
+fieldset, img {border:0 none;}
+address, em {font-style:normal;}
+table {
+	border-collapse:collapse; 
+	border-spacing:0; /*corss-browsing*/
+	}
+q:before, q:after {content:' ';} /*only IE8*/
+header, nav, article, section, aside, footer, menu, hgroup, figure {display:block;}
