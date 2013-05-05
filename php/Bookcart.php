@@ -1,33 +1,34 @@
-<?		// bookcart.php (장바구니에 담는것을 처리하는 페이지)
+<?		// bookcart.php (To be placed on the cart)
 session_start( );
-include"db_connect.php";
+include"DB_Connect.php";
 //---------------------------------------------------------------------------
 echo"<h3>";
-//echo "책번호는 " . $_GET['isbn'] . " 책수량은 " . $_POST['quantity'];	
+//echo "The book number is " . $_GET['isbn'] . " The quantity of books are " . $_POST['quantity'];	
 
 $isbn = $_GET['isbn'];		
 $quantity = $_POST['quantity'];
 
 //***********************************************************************
-// 장바구니의 구조
-//	$_SESSION['Cart'][ 책번호 ] = 구매수량;
-// * 페이지가 끝나도 계속 유지되는 배열을 글로벌배열이라고 한다.
-// session_start( ) 를 사용해야 $_SESSION 을 글로벌배열로 사용할수있다.
-// 다른페이지에서도 글로벌배열을 사용할수있다는점이 중요하다 !!
+// The structure of the cart
+//	$_SESSION['Cart'][ Book Number ] = Amount of the purchase;
+// * Global array - $_SESSION
+// session_start( ) is a must. 
+// The global array can be used in other pages as well.
 
-// 이전에 저장했었던 책인지 알아낸다.
-if( isset($_SESSION['Cart'][ $isbn ])==true) // 이 방(책) 이 이미 있는가?
+// Is this book stored previously or not?
+if( isset($_SESSION['Cart'][ $isbn ])==true) 
 {
-	// 이전의 구매수량에 누적시킨다.
+	// Accrue to the quantity of the previous purchase
 	$_SESSION['Cart'][ $isbn ] += $quantity; 
 }
 else
 {
-	// 현재 구매수량을 그냥 저장한다.
+	// Store the current quantity
 	$_SESSION['Cart'][ $isbn ] = $quantity; 
 }
 //***********************************************************************
-// 잘 저장되었다고 보여주고, 이전페이지로 돌아가게끔 해준다.
+// Show - It has been stored successfully 
+// Return to the previous page
 echo"<script language=javascript> history.back(); </script>";
 ?>
 

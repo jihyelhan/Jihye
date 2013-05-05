@@ -1,37 +1,37 @@
 <?
-/* 관리자로그인처리하는 페이지(Admin_Login.php)
-1. 관리자의 아이디와 암호를 검사하는 부분
-2. 일치하면 로그인메시지보여주고, 세션저장소에 관리자의 아이디를저장함
-3. 1~2초후에 Admin_Menu.php 로 보냄 */
+/* Administrator Login page(Admin_Login.php)
+1. Check the admin.`s user name and password
+2. Match OK - show the login message, store the admin.`s user name 
+3. Send it to the Admin_Menu.php in 1~2 sec.*/
 session_start( );
 		
 		if( empty($_POST['in_id'])  or   empty($_POST['in_pass']) )
-		{ echo"<h1><b><font color=red> 입력받지않은항목이있습니다. 다시입력해주세요<br>";
+		{ echo"<h1><b><font color=red> An item is not submitted. Please re-type the id and the password. <br>";
 		  exit;  }
 
 		echo "ID: " . $_POST['in_id'];   		echo "ID: " . $_POST['in_pass'];
 		$id  = $_POST['in_id'];			$pass = $_POST['in_pass'];
 	
-		// 새로수정한 내용
-		include"db_connect.php";
+		// New Modifications
+		include"DB_Connect.php";
 
-		// 비밀번호는 암호화한다음에 비교해야합니다~~
-		$result = mysql_query("SELECT *  FROM  Admin_info 
+		// The password must be encrypted
+		$result = mysql_query("SELECT *  FROM  admin_info 
 						WHERE   admin_id='$id'   and   admin_pass = '$pass'");
 
-		// 결과가 몇개인지 알아본다.
+		// Find out how many results
 		$count =	mysql_num_rows($result);
 	
 
-		if( $count != 1 )  // 검색결과가 없으면.....
+		if( $count != 1 )  // If there is no result.....
 		{ 
-			echo"<h1><b><font color=red> 관리자아이디나 암호를 확인해주세요~^^";    
+			echo"<h1><b><font color=red> Please recheck the id or the password.";    
 		    echo"<meta http-equiv='Refresh' content='2; URL=Admin_Login.html'>";  
 		}
 		else
 		{   
-			echo"<h1><b><font color=blue> 로그인되었습니다. 안녕하세요 관리자님";		
-			$_SESSION['Logged_in_admin'] = "superuser"; 
+			echo"<h1><b><font color=blue> Logged in. Hello!";		
+			$_SESSION['Logged_in_admin'] = "coco"; 
 		   echo"<meta http-equiv='Refresh' content='2; URL=Admin_Menu.php'>";
 		}
 ?>

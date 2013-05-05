@@ -1,11 +1,11 @@
-<?		// Foorter.php (화면의 밑바닥에 나오는 부분)
+<?		// Foorter.php 
 
 echo"<hr size=3 color=black><br>";
 echo"<center><h5><b>";
 //------------------------------------------
-echo"회사주소: 서울시 강남구 역삼동 정해빌딩 2~3F <br>";
-echo"대표: 이경수 <br>";
-echo"연락처: 010-2209-7786 <br>";
+echo"Jihye<br>";
+echo"E-mail : jh6695@gmail.com<br>";
+echo"Contact: +41764558211 <br>";
 //------------------------------------------
 echo"</b></h3></center>";
 echo"<br>";

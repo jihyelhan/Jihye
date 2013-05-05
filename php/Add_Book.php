@@ -1,30 +1,28 @@
 <?php
 /*	
-		새상품 추가하는 페이지 (add_book.php)
+		a page, add new products (add_book.php)
 	
-		(1) 새로운상품의 카테고리를 선택해줌 (select 태그를 사용함)
-		*각각의 항목은 value 가 카테고리번호(catid) 로 되어있음
-	
-		(2) 상품의 정보를 입력할수있도록 입력상자들을 만들어줌 
-			* 책제목, 번호, 가격, 재고수량 , 설명
-			* 카테고리번호는 위에서 선택한것에 의해서 결정됨
-
-		(3) "저장하기" 버튼을 눌러서 add_book_db.php 페이지로 전송하기.
+		(1) Select a category of new products (using the select tag)
+		* Each items are made with the category numbers(catid) as its value.
+		(2) Make the input boxes to type the info. of the products.
+			* Book title, number, Price, Quantity , description
+			* The category number is determined by selected info. of the product.
+		(3) click the "Save" botton to send 'add_book_db.php' page.
 */
-// * 카테고리테이블에 있는 카테고리가 몇개인지 알아내기
-include"db_connect.php";
+// * Categories
+include"DB_Connect.php";
 
-// 카테고리전부다 가져오기
+// Import all the categories
 $res = mysql_query("select * from bookshop_category");  
-$max_category = mysql_num_rows($res);  // 갯수알아내기
+$max_category = mysql_num_rows($res);  
 
-echo"<form action=add_book_db.php method=post>";
-echo"<h1><b><center> 새책추가 </center></h1>";
-echo"<hr color=black width=90%> 카테고리 ";	
+echo"<form action=Add_Book_DB.php method=post>";
+echo"<h1><b><center> Add a new book </center></h1>";
+echo"<hr color=black width=90%> Category ";	
 
 echo"<select name=category>";  //  $_POST['category']
 
-		for($index=1;		$index<=$max_category;		$index++) //갯수만큼~
+		for($index=1;		$index<=$max_category;		$index++)
 		{
 			$rec = mysql_fetch_array($res);
 			$cat_id = $rec['category_no'];		
@@ -35,13 +33,13 @@ echo"</select>";
 
 ?>
 <hr color=black width=90%>
-	제목 <input type="text " size=10 name="title">
-	번호 <input type="text " size=10 name="isbn">
-	가격 <input type="text " size=10 name="price">
-	재고수량 <input type="text " size=10 name="quantity">
+	Title <input type="text " size=10 name="title">
+	Number <input type="text " size=10 name="isbn">
+	Price <input type="text " size=10 name="price">
+	Quantity <input type="text " size=10 name="quantity">
 	<hr color=black width=90%>
-	설명 <textarea name="description" rows="10" cols="50"></textarea>
-	<input type="submit" value="새책추가하기">
+	Description <textarea name="description" rows="10" cols="50"></textarea>
+	<input type="submit" value="Add a new book">
 	</form>
 <?
 

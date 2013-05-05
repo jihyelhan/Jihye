@@ -18,8 +18,9 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 --
 -- 데이터베이스: `bookshop_db`
 --
-CREATE DATABASE `bookshop_db` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `bookshop_db`;
+
+USE `jihyelhan`;
+
 
 -- --------------------------------------------------------
 
@@ -32,14 +33,14 @@ CREATE TABLE IF NOT EXISTS `admin_info` (
   `admin_id` varchar(20) NOT NULL,
   `admin_pass` varchar(20) NOT NULL,
   PRIMARY KEY (`admin_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=UTF8;
 
 --
 -- 테이블의 덤프 데이터 `admin_info`
 --
 
 INSERT INTO `admin_info` (`name`, `admin_id`, `admin_pass`) VALUES
-('kim', 'superuser', '12345');
+('kim', 'coco', '12345');
 
 -- --------------------------------------------------------
 
@@ -51,18 +52,18 @@ CREATE TABLE IF NOT EXISTS `bookshop_category` (
   `category_name` varchar(20) NOT NULL,
   `category_no` int(10) unsigned NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`category_no`)
-) ENGINE=MyISAM  DEFAULT CHARSET=euckr AUTO_INCREMENT=6 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=UTF8 AUTO_INCREMENT=6 ;
 
 --
 -- 테이블의 덤프 데이터 `bookshop_category`
 --
 
 INSERT INTO `bookshop_category` (`category_name`, `category_no`) VALUES
-('소설', 1),
-('여행', 2),
-('만화', 3),
-('잡지', 4),
-('중고책', 5);
+('Novel', 1),
+('Travel', 2),
+('Cartoon', 3),
+('Magazine', 4),
+('Used Book', 5);
 
 -- --------------------------------------------------------
 
@@ -76,22 +77,22 @@ CREATE TABLE IF NOT EXISTS `bookshop_table` (
   `title` varchar(20) NOT NULL,
   `price` int(10) unsigned NOT NULL,
   `quantity` int(10) unsigned NOT NULL,
-  `Review` varchar(50) NOT NULL,
+  `Review` varchar(70) NOT NULL,
   PRIMARY KEY (`isbn`)
-) ENGINE=MyISAM DEFAULT CHARSET=euckr;
+) ENGINE=MyISAM DEFAULT CHARSET=UTF8;
 
 --
 -- 테이블의 덤프 데이터 `bookshop_table`
 --
 
 INSERT INTO `bookshop_table` (`category_no`, `isbn`, `title`, `price`, `quantity`, `Review`) VALUES
-(1, 1003, '빅픽쳐2', 25000, 10, '완전재밌어요~~'),
-(2, 2007, '걸어서세계속으로', 13000, 2, 'tv에서방영된 걸어서세계속으로를 책으로만나보자'),
-(3, 3009, '열혈강호', 12500, 10, '한비광의 좌충우돌 강호유람기~'),
-(1, 1009, '삼국지', 12500, 11, '영웅들의'),
-(2, 2008, '문화유산답사기', 17000, 5, '유홍준교수님의 전국유랑기~'),
-(3, 3004, '드래곤볼Z', 15500, 20, '지구로떨어진'),
-(1, 1006, '새소설이야', 2500, 2, '새로들어온거야~ 내용은잘몰라');
+(1, 1003, 'The Big Picture', 25000, 10, 'Interesting Book'),
+(2, 2007, 'Lonely Planet Discover Europe', 13000, 2, 'Ancient Rome, the Louvre in Paris, London’s Tower '),
+(3, 3009, 'The Complete Cartoons of the New Yorker', 12500, 10, 'The book that Janet Maslin of The New York Times has called "indispensable" and "a transfixing study of American mores and manners that happens to incorporate boundless laughs, too" is finally available'),
+(1, 1009, 'Buried ', 12500, 11, 'In Buried, the next thrilling Bone Secrets novel from bestselling author Kendra Elliot, a damaged hero digs deep into his terrifying past…and unearths a chance at love for the future.'),
+(2, 2008, 'Worlds Best Travel Experiences', 17000, 5, 'Offering awe-inspiring destinations.'),
+(3, 3004, 'The Best of Pointless Conversations', 15500, 20, 'Pointless Conversations'),
+(1, 1006, 'Rise', 2500, 2, 'In Rise, Eve must choose who to leave behind, and sacrifice in the chilling dystopia of The New America comes to a stunning conclusion.');
 
 -- --------------------------------------------------------
 
@@ -105,14 +106,14 @@ CREATE TABLE IF NOT EXISTS `member_table` (
   `name` varchar(15) NOT NULL,
   `email` varchar(20) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=euckr;
+) ENGINE=MyISAM DEFAULT CHARSET=UTF8;
 
 --
 -- 테이블의 덤프 데이터 `member_table`
 --
 
 INSERT INTO `member_table` (`id`, `pass`, `name`, `email`) VALUES
-('www', '1212', 'kim', 'kim@daum.net');
+('www', '1212', 'han', 'jh6695@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -125,7 +126,7 @@ CREATE TABLE IF NOT EXISTS `order_item_table` (
   `order_isbn` int(10) unsigned NOT NULL,
   `order_price` int(10) unsigned NOT NULL,
   `order_quantity` int(10) unsigned NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=euckr;
+) ENGINE=MyISAM DEFAULT CHARSET=UTF8;
 
 --
 -- 테이블의 덤프 데이터 `order_item_table`
@@ -150,11 +151,11 @@ CREATE TABLE IF NOT EXISTS `order_list_table` (
   `order_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `order_no` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`order_no`)
-) ENGINE=MyISAM  DEFAULT CHARSET=euckr AUTO_INCREMENT=14 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=UTF8 AUTO_INCREMENT=14 ;
 
 --
 -- 테이블의 덤프 데이터 `order_list_table`
 --
 
 INSERT INTO `order_list_table` (`order_name`, `order_addr`, `order_id`, `order_date`, `order_no`) VALUES
-('이경수', '서울이라니깐', 'www', '2013-01-16 18:38:24', 13);
+('Jihye', 'Seoul', 'www', '2013-01-16 18:38:24', 13);
